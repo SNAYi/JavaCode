@@ -12,6 +12,7 @@ public class TestOrder{
 		
 		//2.实例化一个商品数组
 		Goods[] goodsArray = new Goods[3];
+		bill.setGoodsArray(goodsArray);
 		//传入商品信息
 		for(int i = 0;i < goodsArray.length;i++) {
 			System.out.println("请输入商品信息(物品 单价 个数)");
@@ -31,7 +32,7 @@ public class TestOrder{
 		bill.setDiscount(Integer.parseInt(discount));
 		
 		//打印消费总金额好让顾客输入实付金额
-		Double b = bill.getrealCost();
+		Double b = bill.getTotalPrice();
 		System.out.println("消费总金额："+b);
 		//输入实付金额
 		System.out.println("请输入实际交费：");
@@ -64,7 +65,7 @@ class Bill{
 	
 	
 	//折后实际消费金额
-	public Double getrealCost(){
+	public Double getTotalPrice(){
 		Double real = 0.0d;
 		for(int i = 0;i < goodsArray.length;i++) {
 			real = real + goodsArray[i].getTotalPrice();
@@ -76,7 +77,7 @@ class Bill{
 	
 	//找钱
 	public Double change() {
-		return this.realPay - this.getrealCost();
+		return this.realPay - this.getTotalPrice();
 	}
 	//字符串账单
 	public String toString() {
@@ -88,10 +89,10 @@ class Bill{
 		  }
 		  a.append("\n")
 		   .append("折扣：").append(this.discount).append("折").append("\n")
-		   .append("消费总金额：").append(this.getrealCost()).append("\n")
+		   .append("消费总金额：").append(this.getTotalPrice()).append("\n")
 		   .append("实际交费：").append(this.realPay).append("\n")
-		   .append("找钱：").append(this.realPay - this.getrealCost()).append("\n")
-		   .append("本次购物所获积分是：").append(this.getrealCost()*0.1);
+		   .append("找钱：").append(this.realPay - this.getTotalPrice()).append("\n")
+		   .append("本次购物所获积分是：").append(this.getTotalPrice()*0.1);
 			
 		return a.toString();
 		}
