@@ -82,9 +82,11 @@ public class ArrayTest {
 			left++;
 			right--;
 		}
+		
+		
 		//另一种写法,更优化
 		//参数校验如果给null,不通过
-		/*if(data = null) {
+		if(data = null) {
 			return;
 		}
 		int mid =data.length / 2;
@@ -92,7 +94,10 @@ public class ArrayTest {
 			int temp = data[i];
 			data[i] = data[data.length - 1 - i];
 			data[data.length - 1 - i] = temp;
-		} */
+		} 
+		//另一种写法结束
+		
+		
     }
     
     public static void main(String[] args){
