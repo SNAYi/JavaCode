@@ -22,39 +22,6 @@ import java.util.Map;
  * @CreateTime: 2019-08-09 12:10
  * @Description:  用户登录校验
  */
-/*@WebServlet("/login")
-public class LoginController extends HttpServlet {
-    private AccountService accountService = new AccountService();
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userName = req.getParameter("username");
-        String password = req.getParameter("password");
-        resp.setContentType("text/html;charset=utf8");
-        PrintWriter writer = resp.getWriter();
-        if (CommUtils.StrIsEmpty(userName) || CommUtils.StrIsEmpty(password)) {
-            // 登录失败，继续尝试登录
-            writer.println("    <script>\n" +
-                    "        alert(\"用户名或密码为空\");\n" +
-                    "        window.location.href = \"/index.html\";\n" +
-                    "    </script>");
-        }
-        if (accountService.userLogin(userName,password)) {
-            //登陆成功，跳转到聊天界面
-        } else {
-            // 登录失败,停留在登录页面
-            writer.println("    <script>\n" +
-                    "        alert(\"用户名或密码不正确 \");\n" +
-                    "        window.location.href = \"/index.html\";\n" +
-                    "    </script>");
-        }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
-    }
-}*/
 @WebServlet(urlPatterns = "/login")
 public class LoginController extends HttpServlet {
     private AccountService accountService = new AccountService();

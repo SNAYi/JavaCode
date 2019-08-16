@@ -30,7 +30,7 @@
       padding-left: 3px;
       padding-top: 1px;
       font-size: 11px;
-      color: #555555; }
+      color: pink; }
   .checkbox input[type="checkbox"],
   .checkbox input[type="radio"] {
     opacity: 0;
@@ -127,7 +127,7 @@
       top: 3px;
       margin-left: -20px;
       border-radius: 50%;
-      background-color: #555555;
+      background-color: pink;
       -webkit-transform: scale(0, 0);
       -ms-transform: scale(0, 0);
       -o-transform: scale(0, 0);

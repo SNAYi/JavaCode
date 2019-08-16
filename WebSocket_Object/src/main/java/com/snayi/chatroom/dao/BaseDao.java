@@ -38,6 +38,7 @@ public class BaseDao {
         }
         return null;
     }
+    //关闭资源
     protected void closeResources(Connection connection, Statement statement) {
         if (connection != null) {
             try {
