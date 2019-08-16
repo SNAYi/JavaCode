@@ -60,36 +60,6 @@ public class WebSocket {
     //接收服务器消息，显示到浏览器端
     @OnMessage
     public void onMessage(String message) {
-        /*//将msg->MessageFromClient
-        MessageFromClient messageFromClient = (MessageFromClient) CommUtils
-                .json2Obj(message,MessageFromClient.class);
-        //群聊信息
-        if (messageFromClient.getType().equals("1")) {
-            String content = messageFromClient.getMsg();
-            MessageToClient messageToClient = new MessageToClient();
-            messageToClient.setContent(content);
-            messageToClient.setNames(names);
-            for (WebSocket socket:clients) {
-                socket.sendMessage(CommUtils.obj2Json(messageToClient));
-            }
-        } else if (messageFromClient.getType().equals("2")) { //私聊消息
-            //私聊内容
-            String content = messageFromClient.getMsg();
-            int toL = messageFromClient.getTo().length();
-            //拿到了需要发消息的sessionId
-            String to[] = messageFromClient.getTo().substring(0,toL-1).split("-");
-            List<String> list = Arrays.asList(to);
-            for (WebSocket webSocket:clients) {
-                if (list.contains(webSocket) && webSocket.session.getId()
-                        !=this.session.getId()) {
-                    //发送私聊信息
-                    MessageToClient messageToClient = new MessageToClient();
-                    messageToClient.setContent(userName,content);
-                    messageToClient.setNames(names);
-                    webSocket.sendMessage(message);
-                }
-            }
-        }*/
         // 将msg -> MessageFromClient
         MessageFromClient messageFromClient = (MessageFromClient) CommUtils
                 .json2Obj(message,MessageFromClient.class);
